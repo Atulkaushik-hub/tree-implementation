@@ -42,11 +42,24 @@ class BinarySearchTree
         inorderRec(root); 
      } 
    
+void postorder()
+{
+postorderrec(root);
+}
+ void postOrderrec(Node root){
+		if(root!=null){
+			postOrder(root.left);
+			postOrder(root.right);
+			System.out.print(root.data+" ");
+		}
+		else{
+			return;
+		}
       
      void inorderRec(Node root) { 
          if (root != null) { 
              inorderRec(root.left); 
-             System.out.println(root.k); 
+             System.out.println(root.k+"."); 
              inorderRec(root.right); 
          } 
      }
@@ -63,6 +76,7 @@ class BinarySearchTree
         tree.insert(453);
         tree.insert(49);    
         tree.inorder(); 
+tree.postorder();
 
     }
 }
